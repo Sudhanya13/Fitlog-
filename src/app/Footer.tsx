@@ -12,11 +12,11 @@ export function Footer() {
           className="h-[34px] w-[30px]"
         ></Image>
 
-        <h2 className=" font-bold text-white">Fitlog</h2>
+        <h2 className=" font-bold text-white">FITLOG</h2>
       </div>
 
       <div className=" font-bold text-white">
-        <p>2026 Fitlog- Workout library. Train hard , log honest</p>
+        <p>© 2026 FitLog — Workout Library. Train hard, log honest</p>
       </div>
     </div>
   );
