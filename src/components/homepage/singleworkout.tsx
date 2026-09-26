@@ -16,13 +16,13 @@ export default function Singleworkout({ planData }: SingleWorkoutProps) {
             <Link key={singleWorkout.id} href={`/workout/${singleWorkout.id}`}>
               <div className=" group w-full max-w-[800px] overflow-hidden rounded-xl border border-white/10 bg-[#15171D] shadow-lg transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl">
                 {/* Image */}
-                <div className="relative h-20 overflow-hidden">
+                <div className="relative h-60 overflow-hidden">
                   <Image
                     src={singleWorkout.image}
                     alt={singleWorkout.name}
                     height={400}
                     width={500}
-                    className="h-[220px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[260px] md:h-[300px] lg:h-[320px]"
+                    className="h-[220px] w-full object-contain transition duration-500 group-hover:scale-105 sm:h-[260px] md:h-[300px] lg:h-[400px]"
                   />
 
                   {/* Dark overlay */}

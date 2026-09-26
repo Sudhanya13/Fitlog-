@@ -217,7 +217,7 @@ import Todayplanbutton from "@/components/Plan/Todayplanbutton";
 import { Workout } from "@/type/singleWorkout";
 
 export const workplanData = async (): Promise<Workout[]> => {
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
 
   if (!res.ok) {
     throw new Error("Failed to fetch workout data");
