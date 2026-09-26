@@ -29,7 +29,7 @@ export default function MyPlan() {
     );
 
     const calories = todayPlan.reduce(
-      (total, workout) => total + Number(workout.calories || 0),
+      (total, workout) => total + Number(workout.caloriesBurned || 0),
       0,
     );
 
@@ -55,7 +55,7 @@ export default function MyPlan() {
       }
 
       if (sortBy === "calories") {
-        return Number(a.calories || 0) - Number(b.calories || 0);
+        return Number(a.caloriesBurned || 0) - Number(b.caloriesBurned || 0);
       }
 
       if (sortBy === "rating") {
@@ -247,9 +247,9 @@ export default function MyPlan() {
         ) : (
           /* Workout List */
           <div className="mt-6 space-y-4">
-            {sortedWorkouts.map((workout, index) => (
+            {sortedWorkouts.map((workout) => (
               <article
-                key={index}
+                key={workout.id}
                 className="overflow-hidden rounded-2xl border border-white/10 bg-[#15171D]"
               >
                 <div className="flex flex-col sm:flex-row">
@@ -281,7 +281,7 @@ export default function MyPlan() {
 
                           <span className="text-white/20">|</span>
 
-                          <span>🔥 {workout.calories} kcal</span>
+                          <span>🔥 {workout.caloriesBurned} kcal</span>
 
                           <span className="text-white/20">|</span>
 

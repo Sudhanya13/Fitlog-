@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <div className="min-h-[500px] bg-[#15171D] text-white  overflow-hidden flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-12">
+    <div className="min-h-[500px] mt-10 bg-[#15171D] text-white rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 mx-6 my-3 md:px-16 py-12">
       {/* Left Content */}
       <div className="flex flex-col items-start max-w-xl">
         <p className="text-sm tracking-[0.3em] text-lime-400 font-semibold mb-5">
