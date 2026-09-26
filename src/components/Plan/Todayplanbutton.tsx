@@ -1,10 +1,15 @@
 "use client";
 
 import { Workoutcontext } from "@/context/WorkoutProvider";
+import { Workout } from "@/type/singleWorkout";
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
 
-export default function Todayplanbutton({ workout }) {
+interface TodayplanbuttonProps {
+  workout: Workout;
+}
+
+export default function Todayplanbutton({ workout }: TodayplanbuttonProps) {
   const { todayPlan, setTodayplan } = useContext(Workoutcontext);
 
   const isAdded = todayPlan.some((item) => item.id === workout.id);

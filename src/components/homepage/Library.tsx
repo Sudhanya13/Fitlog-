@@ -11,7 +11,7 @@ export default async function Library() {
       <section id="library">
         <div className="mx-5 mt-6 px-2 py-2">
           <h1 className="text-2xl font-bold text-white">THE LIBRARY</h1>
-          <p className="  text-white">
+          <p className="  text-[#9CA3AF]">
             Tweleve lifts covering every major muscle group.{" "}
           </p>
         </div>

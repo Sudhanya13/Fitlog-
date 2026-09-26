@@ -1,10 +1,15 @@
 "use client";
 
 import { Workoutcontext } from "@/context/WorkoutProvider";
+import { Workout } from "@/type/singleWorkout";
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 
-export default function SaveLaterbutton({ workout }) {
+interface SaveLaterbuttonProps {
+  workout: Workout;
+}
+
+export default function SaveLaterbutton({ workout }: SaveLaterbuttonProps) {
   const { saveLater, setSaveLater } = useContext(Workoutcontext);
 
   const [isDisabled, setIsDisabled] = useState(false);

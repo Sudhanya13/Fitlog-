@@ -53,7 +53,7 @@ export default function Navbar() {
           <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-full bg-black p-1 lg:flex">
             <Link
               href="/"
-              className={`rounded-full px-6 py-2 text-sm font-bold transition ${
+              className={`rounded-full  px-6 py-2 text-sm font-bold transition ${
                 pathname === "/"
                   ? "text-[#C2F800]"
                   : "text-gray-400 hover:text-white"

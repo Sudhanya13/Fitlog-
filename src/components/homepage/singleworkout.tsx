@@ -1,8 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Workout } from "@/type/singleWorkout";
 
-export default function Singleworkout({ planData }) {
+interface SingleWorkoutProps {
+  planData: Workout[];
+}
+
+export default function Singleworkout({ planData }: SingleWorkoutProps) {
   return (
     <div>
       <div className="  grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4 mx-2 py-5 my-2.5">
@@ -17,7 +22,7 @@ export default function Singleworkout({ planData }) {
                     alt={singleWorkout.name}
                     height={400}
                     width={500}
-                    className="h-50 w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="h-[220px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[260px] md:h-[300px] lg:h-[320px]"
                   />
 
                   {/* Dark overlay */}
