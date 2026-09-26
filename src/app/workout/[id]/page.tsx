@@ -6,19 +6,19 @@ import Todayplanbutton from "@/components/Plan/Todayplanbutton";
 import { notFound } from "next/navigation";
 
 export const workplanData = async () => {
-  // const res = await fetch(`https://api.abcz.workers.dev/api/fitlo/${id}`);
   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
   const data = await res.json();
+
   return data;
 };
 
 export default async function WorkoutDetails({ params }) {
-  // console.log(params);
   const { id } = await params;
+
   const planData = await workplanData();
 
   const workout = planData.find((workout) => String(workout.id) === String(id));
-  // console.log(workout);
+
   if (!workout) {
     notFound();
   }
@@ -39,15 +39,12 @@ export default async function WorkoutDetails({ params }) {
                 className="object-cover"
               />
 
-              {/* Image overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#15171D] via-black/10 to-transparent" />
 
-              {/* Difficulty badge */}
               <div className="absolute right-5 top-5 rounded-full border border-white/10 bg-black/60 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
                 {workout.difficulty}
               </div>
 
-              {/* Image bottom text */}
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
                   Workout
@@ -100,6 +97,7 @@ export default async function WorkoutDetails({ params }) {
                       <p className="text-[10px] font-semibold tracking-widest text-gray-500">
                         EQUIPMENT
                       </p>
+
                       <p className="mt-1 text-sm font-semibold text-white">
                         {workout.equipment}
                       </p>
@@ -109,6 +107,7 @@ export default async function WorkoutDetails({ params }) {
                       <p className="text-[10px] font-semibold tracking-widest text-gray-500">
                         DIFFICULTY
                       </p>
+
                       <p className="mt-1 text-sm font-semibold text-white">
                         {workout.difficulty}
                       </p>
@@ -120,6 +119,7 @@ export default async function WorkoutDetails({ params }) {
                       <p className="text-[10px] font-semibold tracking-widest text-gray-500">
                         SETS
                       </p>
+
                       <p className="mt-1 text-sm font-semibold text-white">
                         {workout.sets}
                       </p>
@@ -129,6 +129,7 @@ export default async function WorkoutDetails({ params }) {
                       <p className="text-[10px] font-semibold tracking-widest text-gray-500">
                         REPS
                       </p>
+
                       <p className="mt-1 text-sm font-semibold text-white">
                         {workout.reps}
                       </p>
@@ -140,6 +141,7 @@ export default async function WorkoutDetails({ params }) {
                       <p className="text-[10px] font-semibold tracking-widest text-gray-500">
                         DURATION
                       </p>
+
                       <p className="mt-1 text-sm font-semibold text-white">
                         {workout.duration} min
                       </p>
@@ -149,8 +151,9 @@ export default async function WorkoutDetails({ params }) {
                       <p className="text-[10px] font-semibold tracking-widest text-gray-500">
                         CALORIES
                       </p>
+
                       <p className="mt-1 text-sm font-semibold text-white">
-                        {workout.calories} kcal
+                        {workout.caloriesBurned} kcal
                       </p>
                     </div>
                   </div>
@@ -175,57 +178,27 @@ export default async function WorkoutDetails({ params }) {
                 </h3>
 
                 <ol className="mt-5 space-y-4">
-                  <li className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-black text-[#15171D]">
-                      1
-                    </span>
+                  {workout.instructions.map((instruction, index) => (
+                    <li key={index} className="flex gap-4">
+                      {/* Number */}
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-black text-[#15171D]">
+                        {index + 1}
+                      </span>
 
-                    <p className="pt-1 text-sm leading-6 text-gray-400">
-                      Lie flat on the bench and position your body securely with
-                      your feet planted firmly on the floor.
-                    </p>
-                  </li>
-
-                  <li className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-black text-[#15171D]">
-                      2
-                    </span>
-
-                    <p className="pt-1 text-sm leading-6 text-gray-400">
-                      Grip the bar slightly wider than shoulder width and unrack
-                      it with your arms fully extended.
-                    </p>
-                  </li>
-
-                  <li className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-black text-[#15171D]">
-                      3
-                    </span>
-
-                    <p className="pt-1 text-sm leading-6 text-gray-400">
-                      Lower the bar under control toward your mid-chest while
-                      keeping your elbows stable.
-                    </p>
-                  </li>
-
-                  <li className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xs font-black text-[#15171D]">
-                      4
-                    </span>
-
-                    <p className="pt-1 text-sm leading-6 text-gray-400">
-                      Press the bar back up until your arms are extended,
-                      maintaining control throughout the movement.
-                    </p>
-                  </li>
+                      {/* Instruction */}
+                      <p className="pt-1 text-sm leading-6 text-gray-400">
+                        {instruction}
+                      </p>
+                    </li>
+                  ))}
                 </ol>
               </div>
 
               {/* ================= BUTTONS ================= */}
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Todayplanbutton workout={workout}></Todayplanbutton>
+                <Todayplanbutton workout={workout} />
 
-                <SaveLaterbutton workout={workout}></SaveLaterbutton>
+                <SaveLaterbutton workout={workout} />
               </div>
             </div>
           </div>

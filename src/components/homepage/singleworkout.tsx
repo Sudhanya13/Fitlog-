@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Singleworkout({ planData }) {
   return (
     <div>
-      <div className="  grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4 py-5 my-2.5">
+      <div className="  grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4 mx-2 py-5 my-2.5">
         {planData.map((singleWorkout) => {
           return (
             <Link key={singleWorkout.id} href={`/workout/${singleWorkout.id}`}>

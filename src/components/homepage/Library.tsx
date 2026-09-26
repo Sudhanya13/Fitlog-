@@ -9,7 +9,7 @@ export default async function Library() {
   return (
     <>
       <div>
-        <div>
+        <div className="mx-5 mt-6 px-2 py-2">
           <h1 className="text-2xl font-bold text-white">THE LIBRARY</h1>
           <p className="  text-white">
             Tweleve lifts covering every major muscle group.{" "}
