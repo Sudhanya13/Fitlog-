@@ -1,11 +1,11 @@
-import Banner from "@/app/components/homepage/Banner";
-import Hero from "@/app/components/homepage/Library";
+import Banner from "@/components/homepage/Banner";
+import Library from "@/components/homepage/Library";
 
 export default function Home() {
   return (
     <div>
       <Banner></Banner>
-      <Hero></Hero>
+      <Library></Library>
     </div>
   );
 }
