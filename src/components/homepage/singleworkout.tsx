@@ -85,10 +85,6 @@ export default function Singleworkout({ planData }) {
                         {singleWorkout.rating}
                       </span>
                     </div>
-
-                    <button className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#15171D] transition hover:bg-gray-200">
-                      Add to Plan
-                    </button>
                   </div>
                 </div>
               </div>
