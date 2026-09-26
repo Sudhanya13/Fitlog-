@@ -247,9 +247,9 @@ export default function MyPlan() {
         ) : (
           /* Workout List */
           <div className="mt-6 space-y-4">
-            {sortedWorkouts.map((workout) => (
+            {sortedWorkouts.map((workout, index) => (
               <article
-                key={workout.id}
+                key={index}
                 className="overflow-hidden rounded-2xl border border-white/10 bg-[#15171D]"
               >
                 <div className="flex flex-col sm:flex-row">
