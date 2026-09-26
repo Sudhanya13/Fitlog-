@@ -8,7 +8,7 @@ export default async function Library() {
   console.log(planData);
   return (
     <>
-      <div>
+      <section id="library">
         <div className="mx-5 mt-6 px-2 py-2">
           <h1 className="text-2xl font-bold text-white">THE LIBRARY</h1>
           <p className="  text-white">
@@ -21,7 +21,7 @@ export default async function Library() {
           <Singleworkout planData={planData}></Singleworkout>
           {/* </div> */}
         </div>
-      </div>
+      </section>
     </>
   );
 }

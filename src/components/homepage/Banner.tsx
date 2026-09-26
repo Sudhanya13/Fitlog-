@@ -21,9 +21,11 @@ export default function Banner() {
           today's plan, and watch the week's work add up.
         </p>
 
-        <button className="bg-lime-400 text-black font-bold px-7 py-3 rounded-full hover:bg-lime-300 transition duration-200">
-          BROWSE WORKOUT
-        </button>
+        <a href="#library">
+          <button className="bg-lime-400 text-black font-bold px-7 py-3 rounded-full hover:bg-lime-300 transition duration-200">
+            BROWSE WORKOUT
+          </button>
+        </a>
       </div>
 
       {/* Right Image */}
