@@ -17,14 +17,15 @@ export default function Banner() {
         </p>
 
         <h2
-          className={`${oswald.className} mb-6 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl`}
+          className={`${oswald.className} text-3xl mb-6 sm:text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl`}
         >
-          <span className="whitespace-nowrap">TRAIN WITH INTENT. LOG</span>
-          <br />
-          EVERY SET.
+          <span className="md:whitespace-nowrap">TRAIN WITH INTENT. LOG</span>
+          <br className="hidden md:block" />
+          <span className="block md:inline">EVERY SET.</span>
         </h2>
 
-        <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
+        {/* <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8"> */}
+        <p className="w-full max-w-xl text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-8">
           Fitlog is a dark, no-nonsense gym companion: pick a lift, lock it into
           today's plan, and watch the week's work add up.
         </p>
