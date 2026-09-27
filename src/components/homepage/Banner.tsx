@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Oswald } from "next/font/google";
+import { ArrowDown } from "lucide-react";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -29,12 +30,20 @@ export default function Banner() {
           Fitlog is a dark, no-nonsense gym companion: pick a lift, lock it into
           today's plan, and watch the week's work add up.
         </p>
-
-        <a href="#library">
-          <button className="bg-lime-400 text-black font-bold px-7 py-3 rounded-lg hover:bg-lime-300 transition duration-200">
-            BROWSE WORKOUTS
-          </button>
+        <a
+          href="#library"
+          className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-7 py-3 font-bold text-black transition duration-200 hover:bg-lime-300"
+        >
+          BROWSE WORKOUTS
+          <ArrowDown className="h-5 w-5" />
         </a>
+
+        {/* <a
+          href="#library"
+          className="bg-lime-400 text-black font-bold px-7 py-3 rounded-lg hover:bg-lime-300 transition duration-200"
+        >
+          BROWSE WORKOUTS
+        </a> */}
       </div>
 
       {/* Right Image */}
