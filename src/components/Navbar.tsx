@@ -4,8 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Oswald } from "next/font/google";
 
 import { Workoutcontext } from "@/context/WorkoutProvider";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: "700",
+});
 
 export default function Navbar() {
   const { todayPlan, saveLater } = useContext(Workoutcontext);
@@ -43,8 +49,10 @@ export default function Navbar() {
                 className="h-9 w-9 sm:h-10 sm:w-10"
               />
 
-              <h1 className="text-lg font-bold text-white sm:text-xl">
-                FitLog
+              <h1
+                className={`${oswald.className}}text-lg font-bold text-white sm:text-xl`}
+              >
+                FITLOG
               </h1>
             </Link>
           </div>
