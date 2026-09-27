@@ -1,19 +1,27 @@
 import React from "react";
 import Image from "next/image";
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: "700",
+});
 
 export default function Banner() {
   return (
     <div className="min-h-[500px] mt-10 bg-[#15171D] text-white rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 mx-6 my-3 md:px-16 py-12">
       {/* Left Content */}
-      <div className="flex flex-col items-start max-w-xl">
+      <div className="flex flex-col items-start max-w-2xl">
         <p className="text-sm tracking-[0.3em] text-lime-400 font-semibold mb-5">
           WORKOUT LIBRARY
         </p>
 
-        <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
-          TRAIN WITH INTENT.
+        <h2
+          className={`${oswald.className} mb-6 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl`}
+        >
+          <span className="whitespace-nowrap">TRAIN WITH INTENT. LOG</span>
           <br />
-          LOG EVERY SET.
+          EVERY SET.
         </h2>
 
         <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
@@ -22,8 +30,8 @@ export default function Banner() {
         </p>
 
         <a href="#library">
-          <button className="bg-lime-400 text-black font-bold px-7 py-3 rounded-full hover:bg-lime-300 transition duration-200">
-            BROWSE WORKOUT
+          <button className="bg-lime-400 text-black font-bold px-7 py-3 rounded-lg hover:bg-lime-300 transition duration-200">
+            BROWSE WORKOUTS
           </button>
         </a>
       </div>
