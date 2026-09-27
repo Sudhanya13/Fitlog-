@@ -79,16 +79,13 @@ export default function Navbar() {
             {/* Plan */}
             <Link
               href="/myplan"
-              className="flex items-center gap-1.5 text-xs font-bold sm:gap-2 sm:text-sm"
+              className="flex items-center gap-1.5 text-xs  font-bold sm:gap-2 sm:text-sm"
             >
               <span>Plan</span>
 
               <span
-                className={`flex h-6 min-w-6 items-center justify-center rounded-full px-1.5 ${
-                  pathname === "/myplan"
-                    ? "bg-[#C2F800] text-black"
-                    : "border border-white/40 text-white"
-                }`}
+                className="flex h-6 min-w-6 items-center justify-center rounded-full px-1.5 bg-[#C2F800] text-black
+                "
               >
                 {todayPlan.length}
               </span>
