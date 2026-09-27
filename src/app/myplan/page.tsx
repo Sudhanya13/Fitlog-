@@ -512,7 +512,7 @@ export default function MyPlan() {
                 : "text-gray-400 hover:text-white"
             }`}
           >
-            Today's Plan ({todayPlan.length})
+            Today's Plan
           </button>
 
           <button
@@ -523,7 +523,7 @@ export default function MyPlan() {
                 : "text-gray-400 hover:text-white"
             }`}
           >
-            Saved ({saveLater.length})
+            Saved
           </button>
         </div>
 

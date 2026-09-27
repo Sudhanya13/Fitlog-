@@ -55,18 +55,18 @@ export default function Navbar() {
               href="/"
               className={`rounded-full  px-6 py-2 text-sm font-bold transition ${
                 pathname === "/"
-                  ? "text-[#C2F800]"
+                  ? "text-[#C2F800] bg-[#d5e794]/20"
                   : "text-gray-400 hover:text-white"
               }`}
             >
-              Workout
+              Workouts
             </Link>
 
             <Link
               href="/myplan"
               className={`rounded-full px-6 py-2 text-sm font-bold transition ${
                 pathname === "/myplan"
-                  ? "text-[#C2F800]"
+                  ? "text-[#C2F800]  bg-[#d5e794]/20"
                   : "text-[#9CA3AF] hover:text-white"
               }`}
             >

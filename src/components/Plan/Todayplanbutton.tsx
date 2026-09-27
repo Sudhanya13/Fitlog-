@@ -4,6 +4,7 @@ import { Workoutcontext } from "@/context/WorkoutProvider";
 import { Workout } from "@/type/singleWorkout";
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
+import { CalendarPlus } from "lucide-react";
 
 interface TodayplanbuttonProps {
   workout: Workout;
@@ -31,13 +32,13 @@ export default function Todayplanbutton({ workout }: TodayplanbuttonProps) {
       <button
         disabled={isAdded}
         onClick={handleaddButton}
-        className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition ${
+        className={` flex w-full   items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-sm   font-bold transition  ${
           isAdded
-            ? "cursor-not-allowed bg-gray-500 text-gray-300"
-            : "bg-white text-[#15171D] hover:bg-gray-200"
+            ? "cursor-not-allowed bg-gray-200 text-[#15171D]"
+            : "bg-[#C2F800] text-[#15171D] hover:bg-gray-200"
         }`}
       >
-        <span className="text-lg">＋</span>
+        <CalendarPlus className="h-5 w-5" />
 
         {isAdded ? "Added to today's plan" : "Add to today's plan"}
       </button>

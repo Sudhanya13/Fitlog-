@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Workout } from "@/type/singleWorkout";
+import { Timer, Flame, Star } from "lucide-react";
 
 interface SingleWorkoutProps {
   planData: Workout[];
@@ -10,7 +11,7 @@ interface SingleWorkoutProps {
 export default function Singleworkout({ planData }: SingleWorkoutProps) {
   return (
     <div>
-      <div className="  grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4 mx-2 py-5 my-2.5">
+      <div className="  grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4 mx-3 py-4 my-2.5">
         {planData.map((singleWorkout) => {
           return (
             <Link key={singleWorkout.id} href={`/workout/${singleWorkout.id}`}>
@@ -35,62 +36,62 @@ export default function Singleworkout({ planData }: SingleWorkoutProps) {
                 </div>
 
                 {/* Content */}
-                <div className="p-3">
+                <div className="p-3 mx-3">
                   {/* Muscle Groups */}
                   <div className="mb-3 flex flex-wrap gap-2">
                     {singleWorkout.muscleGroups.map((muscle) => (
                       <span
                         key={muscle}
-                        className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+                        className="rounded-full bg-[#C2F800] px-3 py-1 text-sm font-semibold  text-black"
                       >
                         {muscle}
                       </span>
                     ))}
                   </div>
-
                   {/* Title */}
                   <h2 className="text-xl font-bold text-white">
                     {singleWorkout.name}
                   </h2>
-
-                  {/* Description */}
+                  {/* Equipment line */}
                   <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-400">
-                    {singleWorkout.description}
+                    {singleWorkout.equipment}
                   </p>
 
                   {/* Workout Stats */}
                   <div className="mt-5 grid grid-cols-3 border-y border-white/10 py-4">
                     <div>
-                      <p className="text-xs text-gray-500">SETS</p>
-                      <p className="mt-1 font-semibold text-white">
-                        {singleWorkout.sets}
+                      {/* <p className="text-xs text-gray-500">SETS</p> */}
+                      <p className="mt-1 flex gap-1 items-center font-semibold text-white">
+                        <Timer className="h-4 w-4" />
+                        <span> {singleWorkout.duration} min</span>
                       </p>
                     </div>
 
                     <div>
-                      <p className="text-xs text-gray-500">REPS</p>
-                      <p className="mt-1 font-semibold text-white">
-                        {singleWorkout.reps}
+                      {/* <p className="text-xs text-gray-500">REPS</p> */}
+                      <p className="mt-1 flex gap-1 items-center font-semibold text-white">
+                        <Flame className="h-4 w-4" />
+                        <span> {singleWorkout.caloriesBurned} min</span>
                       </p>
                     </div>
 
                     <div>
-                      <p className="text-xs text-gray-500">TIME</p>
-                      <p className="mt-1 font-semibold text-white">
-                        {singleWorkout.duration} min
+                      {/* <p className="text-xs text-gray-500">TIME</p> */}
+                      <p className="mt-1 flex gap-1 items-center font-semibold text-white">
+                        <Star className="h-4 w-4" />
+                        <span> {singleWorkout.rating} </span>
                       </p>
                     </div>
                   </div>
-
                   {/* Bottom Row */}
-                  <div className="mt-5 flex items-center justify-between">
+                  {/* <div className="mt-5 flex items-center justify-between">
                     <div>
                       <span className="text-yellow-400">★</span>
                       <span className="ml-1 text-sm font-semibold text-white">
                         {singleWorkout.rating}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Link>
