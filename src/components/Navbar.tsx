@@ -50,7 +50,7 @@ export default function Navbar() {
               />
 
               <h1
-                className={`${oswald.className}}text-lg font-bold text-white sm:text-xl`}
+                className={`${oswald.className} text-2xl font-bold text-white sm:text-xl`}
               >
                 FITLOG
               </h1>
